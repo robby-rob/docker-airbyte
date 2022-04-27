@@ -1,13 +1,10 @@
 #!/sh
 mkdir output
 
-rm .env
-rm docker-compose.yaml
-
 wget https://raw.githubusercontent.com/airbytehq/airbyte/master/.env
-cp .env /app/output/.env
-
 wget https://raw.githubusercontent.com/airbytehq/airbyte/master/docker-compose.yaml
+
+cp .env /app/output/.env
 
 # Backend
 cat docker-compose.yaml | \
