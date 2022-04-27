@@ -1,5 +1,5 @@
 FROM mikefarah/yq:4
 WORKDIR /app
-COPY source/ .
+COPY files/ .
 ENTRYPOINT ["sh"]
 CMD ["run.sh"]
