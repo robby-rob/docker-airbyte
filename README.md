@@ -1,3 +1,3 @@
 # docker-airbyte
 
-Airbyte with an nginx reverse proxy
+Airbyte with an Nginx reverse proxy
