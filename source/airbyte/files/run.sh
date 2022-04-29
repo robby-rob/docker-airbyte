@@ -1,4 +1,4 @@
-#!/sh
+#!/bin/sh
 
 cd /tmp
 wget https://raw.githubusercontent.com/airbytehq/airbyte/master/.env
@@ -15,6 +15,3 @@ cat > docker-compose.yaml
 # Frontend
 yq eval-all 'select(fileIndex == 0) *+ select(fileIndex == 1)' docker-compose.yaml /app/reverseproxy.yaml | \
 cat > /app/output/docker-compose.yaml
-
-#rm /tmp/.env
-#rm /tmp/docker-compose.yaml

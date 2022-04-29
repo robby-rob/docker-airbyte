@@ -1,12 +1,15 @@
 services:
   reverseproxy:
-    image: nginx:latest
+    #image: nginx:latest
+    build:
+      context: ../.
+      dockerfile: source/nginx/Dockerfile
     container_name: airbyte-reverseproxy
     restart: unless-stopped
     networks:
       - backend
     ports:
-      - 80:80
+      - 8000:8000
       - 443:443
 
 networks:
