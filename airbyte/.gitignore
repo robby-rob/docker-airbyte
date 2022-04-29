@@ -1,2 +1,3 @@
-docker-compose.yaml
+temporal/
 .env
+docker-compose.yaml

@@ -1,20 +1,15 @@
-#!/sh
+#!/bin/sh
 
 cd /tmp
+
 wget https://raw.githubusercontent.com/airbytehq/airbyte/master/.env
 wget https://raw.githubusercontent.com/airbytehq/airbyte/master/docker-compose.yaml
 
 cp .env /app/output/.env
 
-# Backend
+# Backend Network
 cat docker-compose.yaml | \
 yq 'del(.services.*.ports)' | \
 yq '.services.*.networks.[0] = "backend"' | \
-cat > docker-compose.yaml
-
-# Frontend
-yq eval-all 'select(fileIndex == 0) *+ select(fileIndex == 1)' docker-compose.yaml /app/reverseproxy.yaml | \
+yq '.networks.backend.name = "airbyte-backend"' | \
 cat > /app/output/docker-compose.yaml
-
-#rm /tmp/.env
-#rm /tmp/docker-compose.yaml
