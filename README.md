@@ -28,7 +28,7 @@ cd nginx
 docker-compose up
 ```
 
-## Create a login
+## Create a login (basic auth)
 
 Run a httpd container
 ``` sh
