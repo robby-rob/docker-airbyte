@@ -3,7 +3,7 @@
 Airbyte with an Nginx reverse proxy
 
 ## Overview
-This grabs the latest docker-compose.yaml and .env files from [airbytehq/airbyte](https://github.com/airbytehq/airbyte) and creates a backend network in place of the default exposed ports. A seperate Nginx reverse proxy is ran to access Airbyte.
+This grabs the latest docker-compose.yaml and .env files from [airbytehq/airbyte](https://github.com/airbytehq/airbyte) and creates a backend network in place of the default exposed ports. A separate Nginx reverse proxy is ran to access Airbyte.
 ## Use
 
 Clone this repo on a machine and run:
@@ -43,7 +43,7 @@ htpasswd -c .htpasswd admin
 
 `exit` container
 
-Copy login to  folder
+Copy login to folder
 ```
 docker cp make-htpasswd:/usr/local/apache2/.htpasswd nginx/config/.htpasswd
 ```
