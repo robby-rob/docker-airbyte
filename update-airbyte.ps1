@@ -1,9 +1,9 @@
-#!/bin/bash
-
 cd source
+cd airbyte
 docker build -t update-airbytecompose .
 docker run --name update-airbytecompose update-airbytecompose
 
+cd ..
 cd ..
 # rm .env
 # rm docker-compose.yaml
