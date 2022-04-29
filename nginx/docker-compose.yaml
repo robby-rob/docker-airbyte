@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  reverseproxy:
+    image: nginx:latest
+    container_name: airbyte-reverseproxy
+    restart: unless-stopped
+    networks:
+      - airbyte
+    ports:
+      - 8000:8000
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./config/.htpasswd:/etc/apache2/.htpasswd:ro
+
+networks:
+  airbyte:
+    name: airbyte-backend
