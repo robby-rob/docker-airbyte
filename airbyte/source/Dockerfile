@@ -1,6 +1,6 @@
 FROM mikefarah/yq:4
-WORKDIR /home/yq/output
-WORKDIR /home/yq/app
+WORKDIR /app
 COPY run.sh .
+RUN mkdir output
 ENTRYPOINT ["sh"]
 CMD ["run.sh"]
