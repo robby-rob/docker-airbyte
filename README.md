@@ -1,9 +1,12 @@
 # docker-airbyte
 
-Airbyte with an Nginx reverse proxy
+Airbyte with an Nginx reverse proxy for user login.
 
 ## Overview
-This grabs the latest docker-compose.yaml and .env files from [airbytehq/airbyte](https://github.com/airbytehq/airbyte) and creates a backend network in place of the default exposed ports. A separate Nginx reverse proxy is ran to access Airbyte.
+Airbyte does not currently have user authentication.
+
+This grabs the latest docker-compose from [airbytehq/airbyte](https://github.com/airbytehq/airbyte) and replaces the default exposed ports with a backend network. An Nginx reverse proxy is then used to provide Airbyte with a user login for authentication.
+
 ## Use
 
 Clone this repo on a machine and run:
