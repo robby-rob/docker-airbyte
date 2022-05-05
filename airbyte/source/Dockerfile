@@ -1,9 +1,10 @@
 FROM mikefarah/yq:4
 USER yq
+ENV VERSION=master
 RUN mkdir /home/yq/output && \
     cd /tmp && \
-    wget https://raw.githubusercontent.com/airbytehq/airbyte/master/.env && \
-    wget https://raw.githubusercontent.com/airbytehq/airbyte/master/docker-compose.yaml && \
+    wget https://raw.githubusercontent.com/airbytehq/airbyte/${VERSION}/.env && \
+    wget https://raw.githubusercontent.com/airbytehq/airbyte/${VERSION}/docker-compose.yaml && \
     cp .env /home/yq/output/.env && \
     cat docker-compose.yaml | \
         yq 'del(.services.*.ports)' | \
