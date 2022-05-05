@@ -31,6 +31,9 @@ cd nginx
 docker-compose up
 ```
 
+## Airbyte Version
+To use a specific version, update the `source/version` file to the desired release tag and run the update script.
+
 ## Create a login
 
 Run a httpd container
